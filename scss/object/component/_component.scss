@@ -1,0 +1,10 @@
+@use "../../foundation/variable" as *;
+
+.c-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background-color: $red;
+    border: 1px solid $red;
+}
