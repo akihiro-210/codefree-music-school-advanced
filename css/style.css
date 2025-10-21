@@ -103,7 +103,6 @@ dd {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -531,17 +530,17 @@ header {
   border: 1px solid #CB0000;
 }
 
-.fv {
+.p-top-fv {
   margin-top: 8rem;
   position: relative;
 }
 @media screen and (max-width: 767px) {
-  .fv {
+  .p-top-fv {
     margin-top: 5rem;
   }
 }
 
-.fv__contents {
+.p-top-fv__contents {
   position: absolute;
   top: 0;
   left: 0;
@@ -559,7 +558,7 @@ header {
   background-color: rgba(80, 80, 80, 0.502); /* #505050 50.2%透過 */
 }
 
-.fv__title {
+.p-top-fv__title {
   font-size: 4rem;
   line-height: 1.5;
   color: #fff;
@@ -567,8 +566,162 @@ header {
   text-align: center;
 }
 @media screen and (max-width: 767px) {
-  .fv__title {
+  .p-top-fv__title {
     font-size: 3rem;
     line-height: 1.6666666667;
+  }
+}
+
+.p-top-message {
+  padding-block: 6.6rem 5.5rem;
+}
+@media screen and (max-width: 767px) {
+  .p-top-message {
+    padding-block: 4.6rem 3.3rem;
+  }
+}
+
+.p-top-message__inner {
+  max-width: 898px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.p-top-message__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.4285714286;
+  color: #CB0000;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .p-top-message__title {
+    font-size: 2.5rem;
+    line-height: 1.6;
+  }
+}
+
+.p-top-message__text {
+  margin-top: 1.8rem;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .p-top-message__text {
+    margin-top: 0.7rem;
+  }
+}
+
+.p-top-message__img {
+  margin-top: 3.6rem;
+  margin-inline: auto;
+  width: 85.8rem;
+}
+@media screen and (max-width: 767px) {
+  .p-top-message__img {
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+
+.p-top-message__items {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.8rem;
+}
+@media screen and (max-width: 767px) {
+  .p-top-message__items {
+    margin-top: 3.5rem;
+  }
+}
+
+.p-top-message__item {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr 2rem 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 3rem;
+     -moz-column-gap: 3rem;
+          column-gap: 3rem;
+  margin-inline: auto;
+}
+
+.p-message-item__en {
+  font-size: 2.5rem;
+  line-height: 2;
+  font-weight: 700;
+  color: #CB0000;
+  text-align: right;
+}
+@media screen and (max-width: 767px) {
+  .p-message-item__en {
+    font-size: 2rem;
+    line-height: 2.5;
+  }
+}
+
+.p-message-item__circle {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #CB0000;
+}
+
+.p-message-item:last-child .p-message-item__circle::before {
+  content: "";
+  top: -17.2rem; /* 矢印長さ18.5emー円の半径1remー矢印太さ0.3rem */
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+  display: block;
+  position: absolute;
+  width: 2.58rem;
+  height: 2.58rem;
+  border-right: 0.3rem solid #CB0000;
+  border-top: 0.3rem solid #CB0000;
+}
+@media screen and (max-width: 767px) {
+  .p-message-item:last-child .p-message-item__circle::before {
+    top: -17.8rem;
+  }
+}
+
+.p-message-item:last-child .p-message-item__circle::after {
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  display: block;
+  position: absolute;
+  width: 0.3rem;
+  height: 18.5rem;
+  background-color: #CB0000;
+}
+@media screen and (max-width: 767px) {
+  .p-message-item:last-child .p-message-item__circle::after {
+    height: 19.1rem;
+  }
+}
+
+.p-message-item__ja {
+  font-size: 2.3rem;
+  line-height: 2.1739130435;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .p-message-item__ja {
+    font-size: 2rem;
+    line-height: 2.5;
   }
 }/*# sourceMappingURL=style.css.map */
