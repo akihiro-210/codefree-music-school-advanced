@@ -530,6 +530,24 @@ header {
   border: 1px solid #CB0000;
 }
 
+.c-inner {
+  max-width: 920px;
+  padding-inline: 2rem;
+  margin-inline: auto;
+}
+
+.c-top-section__title {
+  font-size: 3rem;
+  line-height: 1.6666666667;
+  font-weight: 700;
+}
+@media screen and (max-width: 767px) {
+  .c-top-section__title {
+    font-size: 2.5rem;
+    line-height: 1.6;
+  }
+}
+
 .p-top-fv {
   margin-top: 8rem;
   position: relative;
@@ -612,7 +630,7 @@ header {
 }
 
 .p-top-message__img {
-  margin-top: 3.6rem;
+  margin-top: 3.3rem;
   margin-inline: auto;
   width: 85.8rem;
 }
@@ -723,5 +741,31 @@ header {
   .p-message-item__ja {
     font-size: 2rem;
     line-height: 2.5;
+  }
+}
+
+.p-top-support {
+  padding-block: 6.8rem 6rem;
+  background-color: #CB0000;
+}
+@media screen and (max-width: 767px) {
+  .p-top-support {
+    padding-block: 4.9rem 4rem;
+  }
+}
+
+.p-top-support__title {
+  text-align: center;
+  color: #fff;
+}
+
+.p-top-support__text {
+  margin-top: 3rem;
+  text-align: center;
+  color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .p-top-support__text {
+    margin-top: 1.4rem;
   }
 }/*# sourceMappingURL=style.css.map */
