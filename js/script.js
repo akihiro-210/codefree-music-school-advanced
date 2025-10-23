@@ -32,3 +32,29 @@ $('a[href^="#"]').click(function(){
   $("body").removeClass("no-scroll");
   return false;
 });
+
+
+//　top-voice　スライダー
+$(function(){
+  $('.p-slider').slick({
+    slidesToShow: 3,        // 一度に表示するスライド数
+    slidesToScroll: 1,      // 一度にスライドする数
+    arrows: true,           // 矢印の表示
+    dots: false,            // ドットナビ非表示
+    infinite: true,         // 無限ループ
+    // autoplay: true,         // 自動再生
+    autoplaySpeed:3000,
+    speed: 600,               // スライド速度（ms）
+    cssEase: 'ease',
+    prevArrow: '<button type="button" class="slick-prev p-slider__prev"><img src="../images/arrow-left.svg" alt="前へ"></button>',
+    nextArrow: '<button type="button" class="slick-next p-slider__next"><img src="../images/arrow-right.svg" alt="次へ"></button>',
+    responsive: [
+      {
+        breakpoint: 768,    // スマホ表示
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+});
