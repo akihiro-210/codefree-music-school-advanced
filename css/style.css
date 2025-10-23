@@ -593,7 +593,7 @@ header {
 }
 
 .p-top-message {
-  padding-block: 6.6rem 5.5rem;
+  padding-block: 6.6rem 5.552rem;
 }
 @media screen and (max-width: 767px) {
   .p-top-message {
@@ -1158,6 +1158,154 @@ header {
 @media screen and (max-width: 767px) {
   .p-flow-item__text {
     margin-left: 4rem;
+    font-size: 1.6rem;
+    line-height: 1.875;
+  }
+}
+
+.p-top-faq {
+  padding-block: 4.4rem 4.45rem;
+}
+@media screen and (max-width: 767px) {
+  .p-top-faq {
+    padding-block: 3.5rem;
+  }
+}
+
+.p-top-faq__lists {
+  margin-top: 3.6rem;
+  border-top: 0.5px solid #000;
+}
+@media screen and (max-width: 767px) {
+  .p-top-faq__lists {
+    margin-top: 3.9rem;
+  }
+}
+
+.p-top-faq__list {
+  border-bottom: 0.5px solid #000;
+}
+
+.p-faq-list__question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-block: 1.5rem 1.45rem;
+  padding-inline: 2rem 4.5rem; /* 右の余白は文章が長くても矢印と被らない設計 */
+  cursor: pointer;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .p-faq-list__question {
+    padding-block: 1.25rem 1.2rem;
+    padding-inline: 0 4.5rem;
+  }
+}
+
+.p-faq-list__question::before {
+  position: absolute;
+  top: 50%;
+  right: 2.85rem;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+  scale: 0.71 1.047;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+@media screen and (max-width: 767px) {
+  .p-faq-list__question::before {
+    right: 1.4rem;
+  }
+}
+
+.js-accordion-button.is-active .p-faq-list__question::before {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.p-faq-list__circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.p-faq-list__q {
+  background-color: #000;
+}
+
+.p-faq-list__a {
+  background-color: #CB0000;
+}
+
+.p-faq-list__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 1rem;
+  font-size: 1.7rem;
+  line-height: 1.7647058824;
+  font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  .p-faq-list__title {
+    margin-left: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.875;
+  }
+}
+
+.p-faq-list__answer {
+  display: none;
+  background-color: rgba(203, 0, 0, 0.098); /* #CB0000 9.8% */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-block: 1.5rem 1.5rem;
+  padding-inline: 2rem 4.5rem; /* 右の余白は文章が長くても矢印と被らない設計 */
+}
+@media screen and (max-width: 767px) {
+  .p-faq-list__answer {
+    padding-block: 1.3rem 1.3rem;
+    padding-inline: 0 4.5rem;
+  }
+}
+
+.p-faq-list__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 1rem;
+  font-size: 1.7rem;
+  line-height: 1.7647058824;
+  font-weight: 700;
+  color: #CB0000;
+}
+@media screen and (max-width: 767px) {
+  .p-faq-list__text {
+    margin-left: 2rem;
     font-size: 1.6rem;
     line-height: 1.875;
   }

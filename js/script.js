@@ -58,3 +58,24 @@ $(function(){
     ]
   });
 });
+
+// アコーディオン
+$(function () {
+  $('.js-accordion-button').on('click', function () {
+    var $content = $(this).find('.js-accordion-content');
+    if ($content.is(':visible')) {
+      $content.slideUp(300);
+      $(this).removeClass('is-active');
+    } else {
+      // jQueryのslideDownでblockが入る前にflex指定
+      $content
+        .css('display', 'flex')
+        .hide()
+        .slideDown(300, function () {
+          // 最終的にflex維持
+          $(this).css('display', 'flex');
+        });
+      $(this).addClass('is-active');
+    }
+  });
+});

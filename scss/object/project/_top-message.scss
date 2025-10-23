@@ -1,7 +1,7 @@
 @use "../../foundation/variable" as *;
 
 .p-top-message{
-    padding-block: 6.6rem 5.5rem;
+    padding-block: 6.6rem 5.552rem;
     @include mq("md"){
         padding-block: 4.6rem 3.3rem;
     }
