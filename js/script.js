@@ -1,5 +1,38 @@
 $(function () {});
 
+
+// ============================
+// スクロール固定用変数と関数
+// ============================
+let scrollPosition = 0;
+
+function lockScroll() {
+  scrollPosition = $(window).scrollTop();
+
+  $("html").css({
+    position: "fixed",
+    top: `-${scrollPosition}px`,
+    width: "100%",
+    overflow: "hidden",
+  });
+
+  $("body").addClass("no-scroll");
+}
+
+function unlockScroll() {
+  $("html").css({
+    position: "",
+    top: "",
+    width: "",
+    overflow: "",
+  });
+
+  $("body").removeClass("no-scroll");
+  $(window).scrollTop(scrollPosition);
+}
+
+
+
 // ヘッダーメニュースクロール時の色変更（aboutセクション上部が画面上端に到達時）
 $(window).on("scroll", function () {
   const aboutTop = $(".about").offset().top;
@@ -16,8 +49,13 @@ $(window).on("scroll", function () {
 $(".hamburger-wrap,.js-drawer,.drawer-menu__item a").click(function () {
     $(".js-hamburger").toggleClass("is-active");
     $(".js-drawer").toggleClass("is-active");
-    $("body").toggleClass("no-scroll");
-    $(".js-page-top").toggleClass("display-none");
+     // ハンバーガー開いている場合はトップへ戻るボタンを非表示、スクロール固定。閉じたら閉じたらスクロール固定解除
+    if ($(".js-drawer").hasClass("is-active")) {
+        $(".js-page-top").stop(true,true).fadeOut(300);
+        lockScroll();
+    } else {
+        unlockScroll();
+    }
 });
 
 
@@ -78,4 +116,45 @@ $(function () {
       $(this).addClass('is-active');
     }
   });
+});
+
+// トップ戻るボタン
+$(function () {
+  const pageTop = $(".js-page-top");
+  pageTop.hide();
+
+  function togglePageTop() {
+    const scroll = $(window).scrollTop();
+    const isDrawerOpen = $(".js-drawer").hasClass("is-active");
+
+    if (isDrawerOpen) {
+      // ドロワー開いてるときは常に非表示
+      pageTop.stop(true, true).fadeOut(300);
+    } else {
+      // 通常時のみスクロール量で制御
+      if (scroll > 100) {
+        // まだ表示されていなければ fadeIn
+        if (!pageTop.is(":visible")) {
+          pageTop.stop(true).fadeIn(300);
+        }
+      } else {
+        // すでに非表示でなければ fadeOut
+        if (pageTop.is(":visible")) {
+          pageTop.stop(true).fadeOut(300);
+        }
+      }
+    }
+  }
+
+  // スクロール・リサイズ時どちらでもチェック
+  $(window).on("scroll resize", togglePageTop);
+
+  // ページトップボタンクリックで戻る
+  pageTop.click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 500);
+    return false;
+  });
+
+  // 初期チェック
+  togglePageTop();
 });

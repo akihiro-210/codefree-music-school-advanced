@@ -62,3 +62,87 @@
     width: 10rem;
     height: 3rem;
 }
+
+
+// return-button
+.c-return{
+    position: fixed;
+    bottom: 9.1rem;
+    right: 11.6rem;
+    width: 68px;
+    height: 68px;
+    clip-path: circle(50% at 50% 50%);
+    overflow: hidden;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.502);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    @include mq("md"){
+        right: 2rem;
+        bottom: 7.8rem;
+    }
+}
+
+@media (hover:hover){
+    .c-return:hover{
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+.c-return__button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.c-return__button::before{
+    background-image: url(../images/top-return-button.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    display: block;
+    content: "";
+    width: 30px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+// contact-button
+.c-contact{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 30rem;
+    height: 6rem;
+    overflow: hidden;
+    z-index: 1000;
+    background-color: $red;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    @include mq("md"){
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+.c-contact__button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s;
+    font-size: 2rem;
+    font-weight: $bold;
+    letter-spacing: 0.2em;
+}
+
+@media (hover: hover){
+    .c-contact__button:hover{
+        background-color: $white;
+        color: $red;
+        opacity: 1;
+    }
+}
