@@ -6,7 +6,9 @@
 
 /* Remove default padding */
 ul,
-ol {
+ol,
+th,
+td{
   padding: 0;
 }
 
@@ -112,4 +114,9 @@ select {
 
 select::-ms-expand {
   display: none;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
 }
