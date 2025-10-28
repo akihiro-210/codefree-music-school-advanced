@@ -167,6 +167,15 @@
     }
 }
 
+.c-sub-fv__img img{
+    aspect-ratio: 1080/200;
+    object-fit: cover;
+    object-position: center;
+    @include mq("md"){
+        aspect-ratio: 375/300;
+    }
+}
+
 .c-sub-fv__contents{
     position: absolute;
     top: 0;

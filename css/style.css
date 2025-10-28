@@ -820,6 +820,19 @@ header {
   }
 }
 
+.c-sub-fv__img img {
+  aspect-ratio: 1080/200;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media screen and (max-width: 767px) {
+  .c-sub-fv__img img {
+    aspect-ratio: 375/300;
+  }
+}
+
 .c-sub-fv__contents {
   position: absolute;
   top: 0;
@@ -2145,6 +2158,111 @@ header {
   .p-blog-list__paginations {
     margin-top: 5.9rem;
   }
+}
+
+.p-result-list {
+  padding-block: 6.5rem 21rem;
+}
+@media screen and (max-width: 767px) {
+  .p-result-list {
+    padding-block: 4.6rem 20.3rem;
+  }
+}
+
+.p-result-list__items {
+  margin-top: 3.9rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 10.6rem;
+     -moz-column-gap: 10.6rem;
+          column-gap: 10.6rem;
+  row-gap: 6.1rem;
+}
+@media screen and (max-width: 767px) {
+  .p-result-list__items {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 4rem;
+  }
+}
+
+.p-result-item__img {
+  position: relative;
+}
+
+.p-result-item__img img {
+  aspect-ratio: 387/273;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media screen and (max-width: 767px) {
+  .p-result-item__img img {
+    aspect-ratio: 335/200;
+  }
+}
+
+.p-result-item__tag {
+  width: 10rem;
+}
+
+.p-result-item__textarea {
+  margin-top: 2rem;
+}
+.p-result-item__time {
+  font-size: 1.8rem;
+  line-height: 1.7777777778;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.p-result-list__paginations {
+  margin-top: 7.1rem;
+}
+@media screen and (max-width: 767px) {
+  .p-result-list__paginations {
+    margin-top: 6rem;
+  }
+}
+
+.p-search {
+  padding-top: min(9.0909090909vw, 80px);
+}
+@media screen and (max-width: 767px) {
+  .p-search {
+    padding-top: 5rem;
+  }
+}
+
+.p-search-list {
+  padding-block: 6.6rem 21rem;
+}
+@media screen and (max-width: 767px) {
+  .p-search-list {
+    padding-block: 3.6rem 20.3rem;
+  }
+}
+
+.p-search-list__results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.p-search-list__title {
+  font-size: 1.8rem;
+  line-height: 1.6666666667;
+  font-weight: 500;
+}
+
+.p-search-list__keyword {
+  font-weight: 700;
 }
 
 .p-send__textarea {
