@@ -7,6 +7,15 @@
     color: $white;
     background-color: $red;
     border: 1px solid $red;
+    transition: color 0.3s , background-color 0.3s;
+}
+
+@media (hover: hover){
+    .c-button:hover{
+        color: $red;
+        background-color: $white;
+        opacity: 1;
+    }
 }
 
 .c-top-section__title{
@@ -147,14 +156,6 @@
     font-size: 2rem;
     font-weight: $bold;
     letter-spacing: 0.2em;
-}
-
-@media (hover: hover){
-    .c-contact__button:hover{
-        background-color: $white;
-        color: $red;
-        opacity: 1;
-    }
 }
 
 // sub-fv

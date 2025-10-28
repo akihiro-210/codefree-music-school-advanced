@@ -151,14 +151,6 @@ header{
     transition: background-color 0.3s, color 0.3s;
 }
 
-@media (hover: hover){
-    .header__button:hover{
-        background-color: $white;
-        color: $red;
-        opacity: 1;
-    }
-}
-
 
 
 // ハンバーガーメニュー

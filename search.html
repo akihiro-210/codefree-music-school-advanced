@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <!-- meta情報 -->
-  <title>ブログ｜きたむらミュージックスクール</title>
+  <title>ブログ検索結果｜きたむらミュージックスクール</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <!-- ogp -->
@@ -41,7 +41,7 @@
       <nav class="header__nav md-none">
         <ul class="header__items">
           <li class="header__item"><a href="./plan.html" class="nav__item header__link">料金</a></li>
-          <li class="header__item"><a href="./blog.html" class="nav__item header__link">ブログ</a></li>
+          <li class="header__item"><a href="./blog-list.html" class="nav__item header__link">ブログ</a></li>
           <li class="header__item"><a href="#result" class="nav__item header__link">卒業実績</a></li>
           <li class="header__item"><a href="#contact" class="nav__item header__button c-button">お問い合わせ</a></li>
         </ul>
@@ -63,7 +63,7 @@
         <div class="drawer-menu__inner">
           <ul class="drawer-menu__items">
             <li class="drawer-menu__item"><a href="./plan.html" class="drawer-menu__link drawer-menu__icon">料金</a></li>
-            <li class="drawer-menu__item"><a href="./blog.html" class="drawer-menu__link drawer-menu__icon">ブログ</a></li>
+            <li class="drawer-menu__item"><a href="./blog-list.html" class="drawer-menu__link drawer-menu__icon">ブログ</a></li>
             <li class="drawer-menu__item"><a href="#result" class="drawer-menu__link drawer-menu__icon">卒業実績</a></li>
           </ul>
         </div>
@@ -71,19 +71,7 @@
     </div>
   </header>
 
-  <main>
-    <!-- sub-fv -->
-    <section class="p-blog-fv c-sub-fv">
-      <div class="p-blog-fv__img c-sub-fv__img">
-        <picture>
-          <source srcset="./images/blog-fv-image.jpg" media="(min-width:768px)">
-          <img src="./images/blog-fv-image-sp.jpg" alt="デスクでPC作業する手元と、デスク上に置かれたギター2本とヘッドホン1個">
-        </picture>
-      </div>
-      <div class="p-blog-fv__contents c-sub-fv__contents">
-        <h1 class="p-blog-fv__title c-sub-fv__title">ブログ</h1>
-      </div>
-    </section>
+  <main class="p-search">
     <!-- パンくずリスト -->
     <div class="c-breadcrumb">
       <div class="l-inner c-breadcrumb__inner">
@@ -92,14 +80,17 @@
             <a href="./index.html" class="c-breadcrumb__link">ホーム</a>
           </li>
           <li class="c-breadcrumb__item">></li>
-          <li class="c-breadcrumb__item current">ブログ</li>
+          <li class="c-breadcrumb__item current">検索</li>
         </ol>
       </div>
     </div>
-    <!-- blog-list -->
-    <section class="p-blog-list">
-      <div class="p-blog-list__inner l-inner">
-        <h2 class="p-blog-list__title c-sub-page__title">ブログ一覧</h2>
+    <!-- search-list -->
+    <section class="p-search-list">
+      <div class="p-search-list__inner l-inner">
+        <div class="p-search-list__results">
+          <h1 class="p-search-list__title">「<span>キーワード</span>」の検索結果</h1>
+          <p>28件</p>
+        </div>
         <ul class="p-blog-list__items">
           <li class="p-blog-list__item p-blog-item">
             <a href="" class="p-blog-item__link">
@@ -300,13 +291,13 @@
       <nav class="footer__nav">
         <ul class="footer__nav-items">
           <li class="footer__nav-item">
-            <a href="#top" class="footer__link">ホーム</a>
+            <a href="./index.html" class="footer__link">ホーム</a>
           </li>
           <li class="footer__nav-item">
-            <a href="#plan" class="footer__link">料金</a>
+            <a href="./plan.html" class="footer__link">料金</a>
           </li>
           <li class="footer__nav-item">
-            <a href="#blog" class="footer__link">ブログ</a>
+            <a href="./blog-list.html" class="footer__link">ブログ</a>
           </li>
           <li class="footer__nav-item">
             <a href="#result" class="footer__link">卒業実績</a>

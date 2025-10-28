@@ -113,7 +113,6 @@ dd {
 /* Set core root defaults */
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
 }
 
@@ -388,13 +387,6 @@ header {
   transition: background-color 0.3s, color 0.3s;
 }
 
-@media (hover: hover) {
-  .header__button:hover {
-    background-color: #fff;
-    color: #CB0000;
-    opacity: 1;
-  }
-}
 .hamburger-wrap {
   z-index: 9999;
   position: fixed;
@@ -649,8 +641,17 @@ header {
   color: #fff;
   background-color: #CB0000;
   border: 1px solid #CB0000;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
+@media (hover: hover) {
+  .c-button:hover {
+    color: #CB0000;
+    background-color: #fff;
+    opacity: 1;
+  }
+}
 .c-top-section__title {
   text-align: center;
   font-size: 3rem;
@@ -809,13 +810,6 @@ header {
   letter-spacing: 0.2em;
 }
 
-@media (hover: hover) {
-  .c-contact__button:hover {
-    background-color: #fff;
-    color: #CB0000;
-    opacity: 1;
-  }
-}
 .c-sub-fv {
   margin-top: min(9.0909090909vw, 80px);
   position: relative;
@@ -2150,5 +2144,55 @@ header {
 @media screen and (max-width: 767px) {
   .p-blog-list__paginations {
     margin-top: 5.9rem;
+  }
+}
+
+.p-404__textarea {
+  padding-block: 6.8rem 9rem;
+}
+@media screen and (max-width: 767px) {
+  .p-404__textarea {
+    padding-block: 4.7rem 5rem;
+  }
+}
+
+.p-404__text {
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .p-404__text {
+    font-size: 1.6rem;
+    line-height: 1.875;
+    text-align: left;
+  }
+}
+
+.p-404__button {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .p-404__button {
+    margin-top: 0.9rem;
+  }
+}
+
+.p-404__link {
+  width: 25rem;
+  height: 5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-top: 0.2rem;
+}
+@media screen and (max-width: 767px) {
+  .p-404__link {
+    width: 100%;
+    max-width: 335px;
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */
