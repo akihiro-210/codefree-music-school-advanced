@@ -2147,6 +2147,56 @@ header {
   }
 }
 
+.p-send__textarea {
+  padding-block: 6.7rem 9rem;
+}
+@media screen and (max-width: 767px) {
+  .p-send__textarea {
+    padding-block: 4.7rem 5rem;
+  }
+}
+
+.p-send__text {
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .p-send__text {
+    font-size: 1.6rem;
+    line-height: 1.875;
+    text-align: left;
+  }
+}
+
+.p-send__button {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .p-send__button {
+    margin-top: 3.9rem;
+  }
+}
+
+.p-send__link {
+  width: 25rem;
+  height: 5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-top: 0.2rem;
+}
+@media screen and (max-width: 767px) {
+  .p-send__link {
+    width: 100%;
+    max-width: 335px;
+    font-size: 2rem;
+  }
+}
+
 .p-404__textarea {
   padding-block: 6.8rem 9rem;
 }
