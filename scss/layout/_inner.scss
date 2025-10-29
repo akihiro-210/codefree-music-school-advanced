@@ -5,3 +5,21 @@
     padding-inline: 2rem;
     margin-inline: auto;
 }
+
+.l-two-column{
+    padding-block: 7rem 18.7rem;
+    display: grid;
+    grid-template-columns: 1fr 25rem;
+    column-gap: 3rem;
+    @include mq("md"){
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+}
+
+.l-sidebar-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+

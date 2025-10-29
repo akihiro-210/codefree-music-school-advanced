@@ -87,6 +87,10 @@
     }
 }
 
+.p-flow-item__name{
+    flex: 1;
+}
+
 .p-flow-item__text{
     flex: 1;
     @include mq("md"){
