@@ -31,20 +31,6 @@ function unlockScroll() {
   $(window).scrollTop(scrollPosition);
 }
 
-
-
-// ヘッダーメニュースクロール時の色変更（aboutセクション上部が画面上端に到達時）
-$(window).on("scroll", function () {
-  const aboutTop = $(".about").offset().top;
-  const scroll = $(this).scrollTop();
-  if (scroll >= aboutTop) {
-    $(".js-header").addClass("headerColorScroll");
-  } else {
-    $(".js-header").removeClass("headerColorScroll");
-  }
-});
-
-
 // ハンバーガーメニュー
 $(".hamburger-wrap,.js-drawer,.drawer-menu__item a").click(function () {
     $(".js-hamburger").toggleClass("is-active");
@@ -80,7 +66,7 @@ $(function(){
     arrows: true,           // 矢印の表示
     dots: false,            // ドットナビ非表示
     infinite: true,         // 無限ループ
-    // autoplay: true,         // 自動再生
+    autoplay: true,         // 自動再生
     autoplaySpeed:3000,
     speed: 600,               // スライド速度（ms）
     cssEase: 'ease',

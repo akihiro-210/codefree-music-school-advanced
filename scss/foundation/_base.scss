@@ -7,6 +7,10 @@ html {
   }
   @include mq("md") {
     font-size: vw(10, 375);
+    // font-size: 10px;
+  }
+  @include mq("sp"){
+    font-size: vw(10,375);
   }
 }
 
