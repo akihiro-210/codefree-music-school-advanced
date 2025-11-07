@@ -80,6 +80,9 @@
 .c-result-tag{
     width: 10rem;
     height: 3rem;
+    @include mq("md"){
+        width: 8rem;
+    }
 }
 
 
