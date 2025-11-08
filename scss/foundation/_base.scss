@@ -6,8 +6,8 @@ html {
     font-size: vw(10, 980);
   }
   @include mq("md") {
-    font-size: vw(10, 375);
-    // font-size: 10px;
+    // font-size: vw(10, 375);
+    font-size: 10px;
   }
   @include mq("sp"){
     font-size: vw(10,375);

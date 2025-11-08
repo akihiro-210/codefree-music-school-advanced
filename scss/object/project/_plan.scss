@@ -15,7 +15,6 @@
     justify-content: center;
     column-gap: 3rem;
     @include mq("md"){
-        margin-top: 4rem;
         flex-direction: column;
         row-gap: 2rem;
     }
@@ -74,7 +73,7 @@
 .p-plan-table__container{
     margin-top: 4.8rem;
     @include mq("md"){
-        margin-top: 1.6rem;
+        margin-top: 1.4rem;
         overflow-x: scroll;
         table-layout: fixed;
     }

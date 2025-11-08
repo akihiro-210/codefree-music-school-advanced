@@ -60,7 +60,8 @@ $('a[href^="#"]').click(function(){
 
 //　top-voice　スライダー
 $(function(){
-  $('.p-slider').slick({
+  const $slider = $('.p-slider');
+  $slider.slick({
     slidesToShow: 3,        // 一度に表示するスライド数
     slidesToScroll: 1,      // 一度にスライドする数
     arrows: true,           // 矢印の表示
@@ -69,6 +70,9 @@ $(function(){
     autoplay: true,         // 自動再生
     autoplaySpeed:3000,
     speed: 600,               // スライド速度（ms）
+    pauseOnHover: false,       // ホバーしても止めない
+    pauseOnFocus: false,       // フォーカスしても止めない（矢印クリック時など）
+    pauseOnDotsHover: false,   // ドット操作でも止めない
     cssEase: 'ease',
     prevArrow: '<button type="button" class="slick-prev p-slider__prev"><img src="../images/arrow-left.svg" alt="前へ"></button>',
     nextArrow: '<button type="button" class="slick-next p-slider__next"><img src="../images/arrow-right.svg" alt="次へ"></button>',
@@ -81,7 +85,28 @@ $(function(){
       }
     ]
   });
+
+  // クリックとドラッグを区別
+  let isDragging = false;
+
+  $slider.on('mousedown touchstart', function() {
+    isDragging = false;
+  });
+
+  $slider.on('mousemove touchmove', function() {
+    isDragging = true;
+  });
+
+  $slider.on('mouseup touchend', 'a', function(e) {
+    if (isDragging) {
+      e.preventDefault();
+    } else {
+      const href = $(this).attr('href');
+      if (href) window.location.href = href;
+    }
+  });
 });
+
 
 // アコーディオン
 $(function () {
@@ -104,43 +129,105 @@ $(function () {
   });
 });
 
-// トップ戻るボタン
+
+// ボタン表示非表示
 $(function () {
   const pageTop = $(".js-page-top");
-  pageTop.hide();
+  const pageContact = $(".js-page-contact");
+  const footer = $(".js-footer");
 
-  function togglePageTop() {
+  // 初期は非表示
+  pageTop.hide();
+  pageContact.hide();
+
+  // 表示・非表示制御
+  function toggleButtons() {
     const scroll = $(window).scrollTop();
     const isDrawerOpen = $(".js-drawer").hasClass("is-active");
 
     if (isDrawerOpen) {
-      // ドロワー開いてるときは常に非表示
       pageTop.stop(true, true).fadeOut(300);
+      pageContact.stop(true, true).fadeOut(300);
+      return;
+    }
+
+    if (scroll > 100) {
+      if (!pageTop.is(":visible")) pageTop.stop(true).fadeIn(300);
+      if (pageContact.length && !pageContact.is(":visible")) pageContact.stop(true).fadeIn(300);
     } else {
-      // 通常時のみスクロール量で制御
-      if (scroll > 100) {
-        // まだ表示されていなければ fadeIn
-        if (!pageTop.is(":visible")) {
-          pageTop.stop(true).fadeIn(300);
-        }
-      } else {
-        // すでに非表示でなければ fadeOut
-        if (pageTop.is(":visible")) {
-          pageTop.stop(true).fadeOut(300);
-        }
-      }
+      if (pageTop.is(":visible")) pageTop.stop(true).fadeOut(300);
+      if (pageContact.is(":visible")) pageContact.stop(true).fadeOut(300);
     }
   }
+  // フッター上部で固定制御
+  function fixButtonPositions($button) {
+    if ($button.length === 0 || footer.length === 0) return;
 
-  // スクロール・リサイズ時どちらでもチェック
-  $(window).on("scroll resize", togglePageTop);
+    const scroll = $(window).scrollTop();
+    const winH = window.visualViewport ? window.visualViewport.height : $(window).height();
+    const footerTop = footer.offset().top;
+    const btnH = $button.outerHeight();
+    const remToPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    // 画面幅によって topMargin の値を変更
+    const isSp = $(window).width() <= 767;
+    const topMarginRem = isSp ? 1.9 : 3.1;
+    const topMargin = topMarginRem * remToPx;
+    const btnBottomPos = scroll + winH;
 
-  // ページトップボタンクリックで戻る
-  pageTop.click(function () {
+    // topボタンなら お問い合わせボタンの高さ＋rem分ずらす
+      let extraOffset = 0;
+    if ($button.hasClass("js-page-top")) {
+      if (pageContact.length) {
+        extraOffset = pageContact.outerHeight() + topMargin;
+      } else {
+        extraOffset = topMargin;
+      }
+    }
+
+    // ========= footer到達判定 =========
+    if (btnBottomPos >= footerTop) {
+      // footer上部に止める
+      const absoluteTop = footerTop - btnH - extraOffset;
+      $button
+        .css({
+          position: "absolute",
+          top: absoluteTop + "px",
+          bottom: "auto",
+        })
+        .addClass("is-absolute");
+    } else {
+      // 通常時：画面下固定
+      $button
+        .css({
+          position: "fixed",
+          top: "auto",
+          bottom: `${extraOffset}px`,
+        })
+        .removeClass("is-absolute");
+    }
+  }
+  // visualViewport変化にも対応（スマホ向け）
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", () => {
+      fixButtonPositions(pageTop);
+      fixButtonPositions(pageContact);
+    });
+  }
+  // スクロール・リサイズ時の処理
+  $(window).on("scroll resize", function () {
+    toggleButtons();
+    fixButtonPositions(pageTop);
+    fixButtonPositions(pageContact);
+  });
+
+  // トップへ戻るクリック動作
+  pageTop.on("click", function () {
     $("html, body").animate({ scrollTop: 0 }, 500);
     return false;
   });
 
-  // 初期チェック
-  togglePageTop();
+  // 初期状態チェック
+  toggleButtons();
+  fixButtonPositions(pageTop);
+  fixButtonPositions(pageContact);
 });

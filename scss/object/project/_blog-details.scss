@@ -16,6 +16,9 @@
 
 .p-blog-head__img img{
     aspect-ratio: 600/350;
+    @include mq("md"){
+        aspect-ratio: 335/200;
+    }
 }
 
 .p-blog-head__title{

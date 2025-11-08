@@ -144,8 +144,10 @@
     z-index: 1000;
     background-color: $red;
     cursor: pointer;
+    pointer-events: auto;
     transition: background-color 0.3s;
     @include mq("md"){
+        width: 33.5rem;
         right: 50%;
         transform: translateX(50%);
     }
@@ -158,6 +160,7 @@
     transition: background-color 0.3s;
     font-size: 2rem;
     font-weight: $bold;
+    pointer-events: auto;
     letter-spacing: 0.2em;
 }
 
@@ -205,11 +208,11 @@
 }
 
 .c-breadcrumb__list{
+    padding-top: 0.2rem;
     height: 5rem;
     display: flex;
     align-items: center;
     column-gap: 1.9rem;
-    padding-top: 0.2rem;
     overflow-x: scroll;
     white-space: nowrap;
     @include mq("md"){
@@ -218,11 +221,19 @@
 }
 
 .c-breadcrumb__item{
+    height: 100%;
     font-size: 1.6rem;
     font-weight: $medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .c-breadcrumb__link{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $black;
 }
 
@@ -232,7 +243,6 @@
     font-weight: $bold;
     text-align: center;
 }
-
 
 // plan-table
 .c-circle{
