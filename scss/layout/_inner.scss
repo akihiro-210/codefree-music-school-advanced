@@ -7,13 +7,12 @@
 }
 
 .l-two-column{
-    padding-block: 7rem 18.7rem;
     display: grid;
     grid-template-columns: 1fr 25rem;
     column-gap: 3rem;
     @include mq("md"){
         grid-template-columns: 100%;
-        row-gap: 3rem;
+        row-gap: 3.2rem;
     }
 }
 
