@@ -34,14 +34,30 @@
     position: relative;
     width: 26rem;
     aspect-ratio: 260/184;
+    overflow: hidden;
     @include mq("md"){
         width: 100%;
         aspect-ratio: 335/200;
     }
 }
 
+.p-blog-item__img img{
+    height: 100%;
+    object-fit: cover;
+}
+
 .p-blog-item__textarea{
     flex: 1;
+}
+
+.p-blog-item__title{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    @include mq("md"){
+        -webkit-line-clamp: 2;
+    }
 }
 
 .p-blog-item__time{
@@ -54,8 +70,13 @@
 
 .p-blog-item__text{
     margin-top: 1.1rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     @include mq("md"){
         margin-top: 0.8rem;
+        -webkit-line-clamp: 5;
     }
 }
 

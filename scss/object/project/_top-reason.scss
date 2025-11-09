@@ -31,10 +31,16 @@
 .p-reason-item__img{
     width: 35rem;
     aspect-ratio: 350/247;
+    overflow: hidden;
     @include mq("md"){
         width: 100%;
         aspect-ratio: 335/200;
     }
+}
+
+.p-reason-item__img img{
+    object-fit: cover;
+    height: 100%;
 }
 
 .p-reason-item__body{

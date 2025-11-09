@@ -21,15 +21,17 @@
 
 .p-result-item__img{
     position: relative;
-}
-
-.p-result-item__img img{
+    overflow: hidden;
     aspect-ratio: 387/273;
-    object-fit: cover;
-    object-position: center;
     @include mq("md"){
         aspect-ratio: 335/200;
     }
+}
+
+.p-result-item__img img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .p-result-item__tag{
@@ -38,9 +40,13 @@
 
 .p-result-item__textarea{
     margin-top: 2rem;
-    @include mq("md"){
+}
 
-    }
+.p-result-item__title{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .p-result-item__time{

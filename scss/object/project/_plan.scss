@@ -94,7 +94,7 @@
 
 .p-plan-table__list{
     width: 100%;
-    border-bottom: 0.5px solid $black;
+    border-bottom: 1px solid $black;
     @include mq("md"){
         min-width: 67rem;
         margin-bottom: 1.7rem;
@@ -107,7 +107,7 @@
     font-size: 2rem;
     line-height: calc(33/20);
     color: $white;
-    border-bottom: 0.5px solid $black;
+    border-bottom: 1px solid $black;
     @include mq("md"){
         height: 6.6rem;
         line-height: calc(25/20);
@@ -148,7 +148,6 @@
 
 .p-table-body{
     height: 8.5rem;
-    // vertical-align: middle;
     font-size: 1.7rem;
     line-height: calc(25/17);
     @include mq("md"){
@@ -174,7 +173,7 @@
 
 .p-table-body__item{
     text-align: center;
-    border-left: 0.5px solid $black;
+    border-left: 1px solid $black;
 }
 
 .p-table-body__price{
@@ -189,7 +188,7 @@
 .p-table-body__line{
     display: inline-block;
     width: 3rem;
-    height: 0.1rem;
+    height: 1px;
     background-color: #707070;
     vertical-align: middle;
 }
