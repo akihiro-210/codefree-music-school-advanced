@@ -78,9 +78,6 @@ header{
         font-size: 1.3rem;
         line-height: calc(25/20);
     }
-    // @media screen and (max-width :360px){
-    //     font-size: 1.4rem;
-    // }
 }
 
 .header__nav{
@@ -164,9 +161,6 @@ header{
     background-color: $red;
     cursor: pointer;
     transition: 1s transform;
-    // @media screen and (max-width :360px){
-    //     width: 6rem;
-    // }
 }
 
 .hamburger{

@@ -179,13 +179,18 @@
     }
 }
 
-.c-sub-fv__img img{
+.c-sub-fv__img{
     aspect-ratio: 1080/200;
-    object-fit: cover;
-    object-position: center;
+    overflow: hidden;
     @include mq("md"){
         aspect-ratio: 375/300;
     }
+}
+
+.c-sub-fv__img img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .c-sub-fv__contents{
