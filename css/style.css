@@ -285,7 +285,7 @@ header {
   height: 5rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-image: url("../../images/logo-red.svg");
+  background-image: url("../images/logo-red.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -801,7 +801,7 @@ header {
 }
 
 .c-return__button::before {
-  background-image: url(../../../images/top-return-button.svg);
+  background-image: url(../images/top-return-button.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
