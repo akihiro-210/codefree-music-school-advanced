@@ -598,7 +598,7 @@ header {
   .footer__copyright {
     margin-top: 2.9rem;
     line-height: 1.3333333333;
-    letter-spacing: -0.03em;
+    margin-inline: -1rem;
   }
 }
 
@@ -927,7 +927,7 @@ header {
   -webkit-column-gap: 1.9rem;
      -moz-column-gap: 1.9rem;
           column-gap: 1.9rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap;
 }
 @media screen and (max-width: 767px) {
@@ -1758,7 +1758,7 @@ header {
 
 .p-faq-list__question::before {
   position: absolute;
-  top: 50%;
+  top: 46%;
   right: 2.85rem;
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
@@ -2043,7 +2043,7 @@ header {
 @media screen and (max-width: 767px) {
   .p-plan-table__container {
     margin-top: 1.4rem;
-    overflow-x: scroll;
+    overflow-x: auto;
     table-layout: fixed;
   }
 }
@@ -2712,12 +2712,11 @@ header {
 
 .p-pagination__img {
   width: 9.8rem;
-  aspect-ratio: 98/68;
   overflow: hidden;
 }
 
 .p-pagination__img img {
-  height: 100%;
+  aspect-ratio: 98/68;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -2851,12 +2850,12 @@ header {
 }
 
 .p-related-item__time {
-  margin-top: 1.2rem;
-  margin-left: 0.4rem;
+  margin-top: 1.3rem;
+  margin-left: 0.5rem;
 }
 @media screen and (max-width: 767px) {
   .p-related-item__time {
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
     margin-left: 0;
   }
 }
@@ -3319,7 +3318,7 @@ header {
 }
 
 .p-result-body__text {
-  width: 44rem;
+  width: 43rem;
 }
 @media screen and (max-width: 767px) {
   .p-result-body__text {
@@ -3408,6 +3407,15 @@ header {
 @media screen and (max-width: 767px) {
   .p-search-list {
     padding-block: 3.6rem 20.3rem;
+  }
+}
+
+.p-search-list__items {
+  margin-top: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .p-search-list__items {
+    margin-top: 4.2rem;
   }
 }
 

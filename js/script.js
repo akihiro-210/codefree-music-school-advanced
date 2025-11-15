@@ -74,8 +74,8 @@ $(function(){
     pauseOnFocus: false,       // フォーカスしても止めない（矢印クリック時など）
     pauseOnDotsHover: false,   // ドット操作でも止めない
     cssEase: 'ease',
-    prevArrow: '<button type="button" class="slick-prev p-slider__prev"><img src="../images/arrow-left.svg" alt="前へ"></button>',
-    nextArrow: '<button type="button" class="slick-next p-slider__next"><img src="../images/arrow-right.svg" alt="次へ"></button>',
+    prevArrow: '<button type="button" class="slick-prev p-slider__prev"><img src="./images/arrow-left.svg" alt="前へ"></button>',
+    nextArrow: '<button type="button" class="slick-next p-slider__next"><img src="./images/arrow-right.svg" alt="次へ"></button>',
     responsive: [
       {
         breakpoint: 768,    // スマホ表示

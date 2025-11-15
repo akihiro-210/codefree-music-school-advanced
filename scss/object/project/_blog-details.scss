@@ -315,12 +315,11 @@
 
 .p-pagination__img{
     width: 9.8rem;
-    aspect-ratio: 98/68;
     overflow: hidden;
 }
 
 .p-pagination__img img{
-    height: 100%;
+    aspect-ratio: 98 / 68;
     object-fit: cover;
     object-position: center;
 }
@@ -420,10 +419,10 @@
 }
 
 .p-related-item__time{
-    margin-top: 1.2rem;
-    margin-left: 0.4rem;
+    margin-top: 1.3rem;
+    margin-left: 0.5rem;
     @include mq("md"){
-        margin-top: 0.4rem;
+        margin-top: 0.5rem;
         margin-left: 0;
     }
 }

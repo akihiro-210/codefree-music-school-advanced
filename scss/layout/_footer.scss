@@ -50,11 +50,10 @@
     font-weight: $medium;
     line-height: calc(33/15);
     color: $white;
-    // white-space: nowrap;
     @include mq("md"){
         margin-top: 2.9rem;
         line-height: calc(20/15);
-        letter-spacing: -0.03em;
+        margin-inline: -1rem;
     }
 }
 
