@@ -74,8 +74,9 @@
     margin-top: 4.8rem;
     @include mq("md"){
         margin-top: 1.4rem;
-        overflow-x: auto;
         table-layout: fixed;
+        // -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
     }
 }
 
@@ -91,6 +92,27 @@
     background: rgba(80, 80, 80, 0.149);
 }
 
+/* 横スクロールバー全体 */
+.p-plan-table__container .simplebar-track.simplebar-horizontal {
+    height: 2.5rem ;
+    background: rgba(80, 80, 80, 0.149) ;
+    border-radius: 0 ;
+    left: 0 ;
+    right: 0 ;
+    bottom: 0 ;
+    display: flex ;
+    align-items: center ;
+}
+
+/* サムバー（現在地バー） */
+.p-plan-table__container .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+    height: 2.3rem ;
+    width: auto;
+    background-color: rgba(80, 80, 80, 0.251) ;
+    border-radius: 0 ;
+    top: 50% ;
+    transform: translateY(-50%) ;
+}
 
 .p-plan-table__list{
     width: 100%;
@@ -98,6 +120,12 @@
     @include mq("md"){
         min-width: 67rem;
         margin-bottom: 1.7rem;
+    }
+}
+
+.p-plan-table__list.is-ios {
+    @include mq("md"){
+        margin-bottom: 4.2rem; // iOSのみ
     }
 }
 
