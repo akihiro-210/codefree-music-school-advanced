@@ -231,3 +231,27 @@ $(function () {
   fixButtonPositions(pageTop);
   fixButtonPositions(pageContact);
 });
+
+
+
+// planスクロールバー表示用iOS判定関数
+function isiOS() {
+  return /iP(ad|hone|od)/.test(window.navigator.userAgent);
+}
+
+window.addEventListener("load", function () {
+  if (!isiOS()) return;
+
+  // ▼ iOS のときだけ .p-plan-table__list にクラス付与
+  document.querySelectorAll('.p-plan-table__list').forEach(el => {
+    el.classList.add('is-ios');
+  });
+
+  // ▼ SimpleBar 適用
+  document.querySelectorAll('.p-plan-table__container').forEach(el => {
+    if (!el.classList.contains('simplebar-content-wrapper')) {
+      const sb = new SimpleBar(el, { autoHide: false }); // 常時表示
+      sb.recalculate(); // 横幅確定後にバーを強制計算
+    }
+  });
+});
