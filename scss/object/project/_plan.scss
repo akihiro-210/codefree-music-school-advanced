@@ -80,7 +80,7 @@
 }
 
 .p-plan-table__container::-webkit-scrollbar{
-    height: 2.5rem;
+    height: 2.4rem;
 }
 
 .p-plan-table__container::-webkit-scrollbar-thumb {
@@ -198,7 +198,7 @@
     font-size: 1.7rem;
     line-height: calc(25/17);
     @include mq("md"){
-        margin-top: 1.7rem;
+        margin-top: 1.8rem;
         font-size: 1.6rem;
         line-height: calc(30/16);
     }
